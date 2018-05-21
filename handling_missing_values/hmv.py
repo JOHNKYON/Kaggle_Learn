@@ -43,7 +43,7 @@ def main():
     print(preds)
 
     my_submission = pd.DataFrame({'Id': test_data.Id, 'SalePrice': preds})
-    my_submission.to_csv('submission.csv', index=False)
+    my_submission.to_csv('/handling_missing_values/submission.csv', index=False)
 
 
 if __name__ == '__main__':

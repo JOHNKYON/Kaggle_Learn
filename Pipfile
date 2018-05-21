@@ -9,6 +9,7 @@ numpy = "*"
 scikit-learn = "*"
 scipy = "*"
 pylint = "*"
+xgboost = "*"
 
 [dev-packages]
 
