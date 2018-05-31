@@ -26,7 +26,6 @@ def main():
     x_test = my_imputer.transform(x_test)
     print(x_train)
 
-
     # Get model
     model = RandomForestRegressor()
     model.fit(x_train, y_train)

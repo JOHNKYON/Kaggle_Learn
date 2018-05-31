@@ -10,6 +10,7 @@ scikit-learn = "*"
 scipy = "*"
 pylint = "*"
 xgboost = "*"
+matplotlib = "*"
 
 [dev-packages]
 

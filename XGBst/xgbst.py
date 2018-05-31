@@ -6,6 +6,7 @@ from __future__ import print_function
 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import Imputer
+from sklearn.pipeline import make_pipeline
 from xgboost import XGBRegressor
 import pandas as pd
 
@@ -21,6 +22,11 @@ def main():
     origin_train_y = train_data.SalePrice
     origin_train_x = train_data.drop(['SalePrice'], axis=1).select_dtypes(exclude='object')
     test_x = test_data.select_dtypes(exclude='object')
+
+    # Encoding
+    origin_train_x = pd.get_dummies(origin_train_x)
+    test_x = pd.get_dummies(test_x)
+    origin_train_x, x_test = origin_train_x.align(test_x, join='left', axis=1)
 
     # Impute data
     my_imputer = Imputer()
